@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Jekyll v4.1.1">
+    <script>
+      
+    </script>
+    <title>Payment</title>
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/bootstrap.min.css" rel="stylesheet">
+<link rel="icon" href="../assets/images/P1.jpg" type="image/icon type">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+  </head>
+  <body class="text-center" style="background-image: url(../assets/images/frontpage/image.png);background-repeat: no-repeat;background-attachment: fixed;  background-size: cover;">
+    <div class="container" style="align-items: center;">
+    <div class="container" style="background-color: rgba(255,255,255,0);padding:0px;width: 1000px;height: 400px;">
+  <!--<img class="mb-2" src="../assets/images/white.png" alt="" width="20%">-->
+  <h2 style="color: white;"><img src="../assets/images/p1bg.png" alt="P">ARKSPOT</h2>
+  <br>
+    <label for="points" style="color: white;">Park for <span id="op"></span></label><br>
+    <input type="range" id="points" name="points" min="1" max="24">
+    <b><p style="color: white;">&#8377 <span id="cost"></span></p></b>
+    <script>
+        var slider = document.getElementById("points");
+        var output = document.getElementById("op");
+        var cost = document.getElementById("cost");
+        output.innerHTML = slider.value.toString()+" hours";
+        cost.innerHTML=(30+(slider.value-1)*20).toString();
+        slider.oninput = function() {
+            k = this.value;
+            if (k>1)
+                {cost.innerHTML=(30+(k-1)*20).toString();
+                output.innerHTML=k.toString()+" hours";}
+            else
+            {output.innerHTML=k.toString()+" hour";
+            cost.innerHTML=(k*30).toString();
+                }}
+    </script>
+  <h4 style="color: white;">Choose your Payment Method</h4>
+  <a href="https://razorpay.com/"><img  src="../assets/images/frontpage/paymenticons/cardcol.png" width="5%" height="10%"></a>
+  <a href="https://razorpay.com/"><img class="ml-5" src="../assets/images/frontpage/paymenticons/netbanking.png" width="5%" height="8%"></a>
+  <a href="https://razorpay.com/"><img class="ml-5"  src="../assets/images/frontpage/paymenticons/mobilecol.png" width="8%" height="8%"></a>
+  
+  <a href="https://razorpay.com/"><img class="ml-4"  src="../assets/images/frontpage/paymenticons/upicol.png" width="5%" height="9%"></a>
+    </div>
+</div>
+</body>
+
+</html>
